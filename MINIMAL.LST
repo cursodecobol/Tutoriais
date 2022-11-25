@@ -1,0 +1,71 @@
+GnuCOBOL 3.1.2.0        c:\desenv\COBOL\tuto Thu Nov 24 22:00:51 2022  Page 0001
+
+LINE    PG/LN  A...B............................................................
+
+000001         IDENTIFICATION DIVISION.
+000002         PROGRAM-ID. MINIMAL.
+000003         DATA DIVISION.
+000004         WORKING-STORAGE SECTION.
+000005         01 WK-PARM.
+000006            03 WK-PARM-LEN PIC S9(04) COMP.
+000007            03 WK-PARM-TXT PIC X(10).
+000008            03 FILLER REDEFINES WK-PARM-TXT.
+000009               05 WK-PARM-TXT-NOME PIC X(6).
+000010               05 FILLER PIC X.
+000011               05 WK-PARM-TXT-TITLE PIC X(3).
+000012         PROCEDURE DIVISION.
+000013             DISPLAY 'A MINIMAL PROGRAM WRITTEN IN COBOL LANGUAGE'
+000014             MOVE 10 TO WK-PARM-LEN
+000015        *    MOVE 'PARAMETROS' TO WK-PARM-TXT
+000016             MOVE SPACES TO WK-PARM-TXT
+000017             MOVE 'WESLEY' TO WK-PARM-TXT-NOME
+000018             MOVE 'MR.'    TO WK-PARM-TXT-TITLE
+000019             CALL "SRMINIMAL" USING WK-PARM
+000020             DISPLAY 'MINIMAL.cbl - FIM'.
+warning: ignoring redundant .
+000021             .
+warning: line not terminated by a newline
+GnuCOBOL 3.1.2.0        c:\desenv\COBOL\tuto Thu Nov 24 22:00:51 2022  Page 0002
+
+SIZE  TYPE           LVL  NAME                           PICTURE
+
+      WORKING-STORAGE SECTION
+
+00012 GROUP          01   WK-PARM
+00002 NUMERIC        03   WK-PARM-LEN                    S9(04) COMP
+00010 ALPHANUMERIC   03   WK-PARM-TXT                    X(10)
+00010 GROUP          03   FILLER, REDEFINES WK-PARM-TXT
+00006 ALPHANUMERIC   05   WK-PARM-TXT-NOME               X(6)
+00001 ALPHANUMERIC   05   FILLER                         X
+00003 ALPHANUMERIC   05   WK-PARM-TXT-TITLE              X(3)
+
+GnuCOBOL 3.1.2.0        c:\desenv\COBOL\tuto Thu Nov 24 22:00:51 2022  Page 0003
+
+NAME                           DEFINED                REFERENCES
+
+WK-PARM                        5        19                             x1
+WK-PARM-LEN                    6       *14                             x1
+WK-PARM-TXT                    7       *16                             x1
+WK-PARM-TXT-NOME               9       *17                             x1
+WK-PARM-TXT-TITLE              11      *18                             x1
+
+GnuCOBOL 3.1.2.0        c:\desenv\COBOL\tuto Thu Nov 24 22:00:51 2022  Page 0004
+
+LABEL                          DEFINED                REFERENCES
+
+E MINIMAL                      12
+GnuCOBOL 3.1.2.0        c:\desenv\COBOL\tuto Thu Nov 24 22:00:51 2022  Page 0005
+
+FUNCTION                       TYPE                   REFERENCES
+
+L SRMINIMAL                    EXTERN   19                             x1
+
+GnuCOBOL 3.1.2.0        c:\desenv\COBOL\tuto Thu Nov 24 22:00:51 2022  Page 0006
+
+Error/Warning summary:
+
+c:\desenv\COBOL\tutorial\MINIMAL.cbl:20: warning: ignoring redundant .
+c:\desenv\COBOL\tutorial\MINIMAL.cbl:21: warning: line not terminated by a newline
+
+2 warnings in compilation group
+0 errors in compilation group
